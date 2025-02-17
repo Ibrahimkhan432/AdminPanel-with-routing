@@ -15,7 +15,43 @@ const UserList = () => {
     };
     fetchAllUsers();
   }, []);
-
+  const userList = [
+    {
+      name: "Ibrahim",
+      email: "ibrahim@example.com",
+      contact: "123-456-7890",
+      cnic: "CNIC-101",
+      vehicle: "civic",
+    },
+    {
+      name: "Ali",
+      email: "ali@example.com",
+      contact: "987-654-3210",
+      cnic: "CNIC-102",
+      vehicle: "civic",
+    },
+    {
+      name: "Bilal",
+      email: "bilal@example.com",
+      contact: "555-666-7777",
+      cnic: "CNIC-103",
+      vehicle: "civic",
+    },
+    {
+      name: "Ather",
+      email: "ather@example.com",
+      contact: "111-222-3333",
+      cnic: "CNIC-104",
+      vehicle: "civic",
+    },
+    {
+      name: "Farhan",
+      email: "farhan@example.com",
+      contact: "444-555-6666",
+      cnic: "CNIC-105",
+      vehicle: "civic",
+    },
+  ];
   return (
     <div className="px-4 bg-slate-400 min-h-screen">
       <div className="font-bold text-2xl  flex flex-row text-slate-900 justify-between">
@@ -37,9 +73,7 @@ const UserList = () => {
               <th scope="col" className="px-6 py-3">
                 Email
               </th>
-              <th scope="col" className="px-6 py-3">
-                Role{" "}
-              </th>
+
               <th scope="col" className="px-6 py-3">
                 Contact
               </th>
@@ -52,7 +86,7 @@ const UserList = () => {
             </tr>
           </thead>
           <tbody>
-            {Users.map((data, index) => (
+            {userList.map((data, index) => (
               <tr
                 key={index}
                 className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700"
@@ -65,9 +99,8 @@ const UserList = () => {
                   {data.name}
                 </th>
                 <td className="px-6 py-4">{data.email}</td>
-                <td className="px-6 py-4">{data.role}</td>
-                <td className="px-6 py-4">{data.phoneNumber}</td>
-                <td className="px-6 py-4">{data.nicNo}</td>
+                <td className="px-6 py-4">{data.contact}</td>
+                <td className="px-6 py-4">{data.cnic}</td>
                 <td className="px-6 py-4">
                   <a
                     href="#"

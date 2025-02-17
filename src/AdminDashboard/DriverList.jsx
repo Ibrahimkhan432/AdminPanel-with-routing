@@ -1,23 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { AppRoutes } from "../constant/Constant";
-// const DriverList = () => {
-//   const [Users, setUsers] = useState([]);
-//   useEffect(() => {
-//     const fetchAllDrivers = async () => {
-//       try {
-//         const res = await axios.get(AppRoutes.getAllUser);
-//         setUsers(res.data.data);
-//         console.log(Users);
-//       } catch (error) {
-//         console.log(error.message);
-//       }
-//       }
-//     fetchAllDrivers();
-//   }, []);
-
 const DriverList = () => {
-  const [driver, setDriver] = useState([]); // New state for drivers only
+  const [driver, setDriver] = useState([]); 
 
   useEffect(() => {
     const fetchAllDrivers = async () => {
@@ -106,7 +91,7 @@ const DriverList = () => {
             </tr>
           </thead>
           <tbody>
-            {driver.map((driverData, index) => (
+            {drivers.map((driverData, index) => (
               <tr
                 key={index}
                 className="odd:bg-white even:bg-gray-50 border-b dark:border-gray-700"
@@ -120,9 +105,9 @@ const DriverList = () => {
                   {driverData.name}
                 </th>
                 <td className="px-6 py-4">{driverData.email}</td>
-                <td className="px-6 py-4">{driverData.phoneNumber}</td>
+                <td className="px-6 py-4">{driverData.contact}</td>
                 <td className="px-6 py-4">{driverData.nicNo}</td>
-                <td className="px-6 py-4">{driverData.vehicleCategory}</td>
+                <td className="px-6 py-4">{driverData.vehicle}</td>
                 <td className="px-6 py-4">
                   <a
                     href="#"
